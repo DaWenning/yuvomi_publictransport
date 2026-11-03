@@ -1,0 +1,46 @@
+{
+  "manifestVersion": 1,
+  "id": "public-transport",
+  "name": "Public Transport",
+  "version": "1.0.0",
+  "description": "Minute-accurate departures for your favorite stops, powered by the public transport.rest API.",
+  "entry": "index.js",
+  "style": "style.css",
+  "icon": "train-front",
+  "accent": "#0F8A5F",
+  "menu": {
+    "show": true,
+    "label": "Public Transport",
+    "labelKey": "menu",
+    "icon": "train-front",
+    "order": 150
+  },
+  "page": {
+    "composition": "data",
+    "width": "content"
+  },
+  "i18n": {
+    "defaultLocale": "en"
+  },
+  "capabilities": {
+    "permissions": {
+      "module": { "label": "Public Transport", "labelKey": "module", "icon": "train-front" },
+      "widgets": [{ "id": "departures", "label": "Departures" }]
+    },
+    "widgets": [
+      {
+        "id": "departures",
+        "entry": "widgets/departures.js",
+        "label": "Departures",
+        "labelKey": "widgets.departures",
+        "icon": "train-front",
+        "defaultSize": "1x2",
+        "defaultVisible": false,
+        "optionsSchema": {
+          "stop_id": { "type": "string", "title": "Stop ID", "titleKey": "options.stop_id", "default": "" },
+          "stop_name": { "type": "string", "title": "Stop name", "titleKey": "options.stop_name", "default": "" }
+        }
+      }
+    ]
+  }
+}
